@@ -2,12 +2,12 @@ package co.com.alura;
 
 import java.util.ArrayList;
 
-public class Ejemplo1 {
+public class Clase1 {
 
 	public static void main(String[] args) {
 		System.out.println("Bienvenido a el curso de Java: Dominando Colletions !!!");
 		
-		System.out.println("Trabajando con ArrayList !!!");
+		System.out.println("Clase 1: Trabajando con ArrayList !!!\n");
 		
 		String variable1 = "Ejemplo1";
 		String variable2 = "Ejemplo2";
