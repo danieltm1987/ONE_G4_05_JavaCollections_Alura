@@ -6,33 +6,32 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import co.com.alura.model.Clase;
 import co.com.alura.model.Curso;
 
-public class Clase5 {
+public class Clase6 {
 
 	public static void main(String[] args) {
 		System.out.println("Bienvenido a el curso de Java: Dominando Colletions !!!");
 		
-		System.out.println("Clase 5:Trabajando con ArrayList de Objetos !!!\n");
+		System.out.println("Clase 6:Trabajando con ArrayList de Objetos !!!\n");
 		
-		Curso curso1 = new Curso("Java", 30);
-		Curso curso2 = new Curso("JavaScript", 10);
-		Curso curso3 = new Curso("PHP", 20);
-		Curso curso4 = new Curso("Ruby", 50);
-		;
+		Curso curso1 = new Curso("Java", 30, new ArrayList<>());
+		curso1.addClase(new Clase("ArrayList"));
+		curso1.addClase(new Clase("List"));
+		curso1.addClase(new Clase("LinkedList"));
 		
-		
+				
 		ArrayList<Curso> cursos = new ArrayList<>();
 		cursos.add(curso1);
-		cursos.add(curso2);
-		cursos.add(curso3);
-		cursos.add(curso4);
 		
-		System.out.println("Clase 5:Imprimiedo el ArrayList de Objetos !!!\n");
-		System.out.println(cursos);
 		
-		System.out.println("Clase 5:Ordenamiento con Colletions !!!\n");
+		System.out.println("Clase 6:Imprimiedo el ArrayList de Objetos !!!\n");
+		System.out.println(cursos.get(0).getClaseList());
 		
+		System.out.println("Clase 6:Ordenamiento con Colletions !!!\n");
+		
+		/*
 		cursos.sort(Comparator.reverseOrder());
 		System.out.println("Inverso :\n"+cursos);
 		
@@ -51,6 +50,7 @@ public class Clase5 {
 		
 		List<Curso> cursoList2 = cursos.stream().filter(curso -> !curso.getNombre().equalsIgnoreCase("Ruby")).sorted(Comparator.comparing(Curso::getTiempo)).collect(Collectors.toList());
 		System.out.println("\nCon Stream, ordenamiento por atributo Tiempo y agregando filtros : \n"+cursoList2);
+		*/
 
 	}
 
