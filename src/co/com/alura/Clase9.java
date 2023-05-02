@@ -44,19 +44,19 @@ public class Clase9 {
 		Collections.sort(cursos, Comparator.comparing(Curso::getNombre).reversed());
 		System.out.println("\nOrdenado con Colletions : \n"+cursos);
 		
-		Collections.sort(cursos, Comparator.reverseOrder());
-		System.out.println("\nRevers Order con Colletions : \n"+cursos);
+		int tiempo = 0;
+		for (Curso curso: cursos) {
+			tiempo += curso.getTiempo();
+		}
 		
-		cursos.sort(Comparator.comparing(Curso::getNombre));
-		System.out.println("\nCon lambda, Ordenamiento por Atributo Nombre : \n"+cursos);
+		System.out.println("Tiempo con FOR : "+tiempo);
 		
+		System.out.println("Tiempo Con Stream :"+cursos.stream().mapToInt(Curso::getTiempo).sum());
 		
-		List<Curso> cursoList = cursos.stream().sorted(Comparator.comparing(Curso::getTiempo)).collect(Collectors.toList());
-		System.out.println("\nCon Stream, ordenamiento por atributo Tiempo : \n"+cursoList);
+		System.out.println("Tiempo Maximo Con Stream :"+cursos.stream().mapToInt(Curso::getTiempo).max().getAsInt());
 		
-		List<Curso> cursoList2 = cursos.stream().filter(curso -> !curso.getNombre().equalsIgnoreCase("Ruby")).sorted(Comparator.comparing(Curso::getTiempo)).collect(Collectors.toList());
-		System.out.println("\nCon Stream, ordenamiento por atributo Tiempo y agregando filtros : \n"+cursoList2);			
-			
+		System.out.println("Tiempo Maximo sin Historia Con Stream :"+cursos.stream().filter(curso -> !curso.getNombre().equalsIgnoreCase("Historia")).mapToInt(Curso::getTiempo).sum());
+						
 		
 		
 	}
