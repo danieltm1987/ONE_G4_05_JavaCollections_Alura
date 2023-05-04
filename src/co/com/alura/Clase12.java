@@ -1,15 +1,16 @@
 package co.com.alura;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Clase11 {
+public class Clase12 {
 
 	public static void main(String[] args) {
 		System.out.println("Bienvenido a el curso de Java: Dominando Colletions !!!");
 		
-		System.out.println("Clase 11:Trabajando con Set y HashSet !!!\n");
+		System.out.println("Clase 12:Trabajando con Set y HashSet !!!\n");
 		
 		String alumno1 = "Daniel Alfonso";
 		String alumno2 = "Luis Miguel";
@@ -39,7 +40,29 @@ public class Clase11 {
 			System.out.println("desde for : "+alumno);
 		}
 		
+		listaAlumnos.forEach(alumno ->{System.out.println("Usando Lambda :"+alumno);});
 		
+		System.out.println("\nCambiando intefaz Set por Colletion Y HashSet por ArrayList\n");
+		
+		Collection<String> listaAlumnosII = new ArrayList<>();
+		listaAlumnosII.add(alumno1);
+		listaAlumnosII.add(alumno2);
+		listaAlumnosII.add(alumno3);
+		listaAlumnosII.add(alumno4);
+		listaAlumnosII.add(alumno5);
+		listaAlumnosII.add(alumno6);
+		listaAlumnosII.add(alumno7);
+		listaAlumnosII.add(alumno8);
+		listaAlumnosII.add(alumno9);
+		
+		
+		System.out.println(listaAlumnosII);
+		
+		for (String alumnosI: listaAlumnosII) {
+			System.out.println("desde for : "+alumnosI);
+		}
+		
+		listaAlumnosII.forEach(alumnosII ->{System.out.println("Usando Lambda :"+alumnosII);});
 
 	}
 
